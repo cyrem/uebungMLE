@@ -10,7 +10,7 @@
 
 (defn create-map []
   (mapv (fn [x]
-          (if (=  (quot x cities) (mod x cities) )
+          (if (=  (quot x cities) (mod x cities))
             0
             (rand-int 25)))
         (range (* cities cities))))
@@ -62,10 +62,10 @@
     (println currentFitness t)
     (if (< t eps)
         newVec
-      (if (or (< newFitness currentFitness)  (< (rand) (weightedFitness newFitness currentFitness t)) )
+      (if (or (< newFitness currentFitness)  (< (rand) (weightedFitness newFitness currentFitness t)))
         (recur newVec (- t eps))
-        (recur v (- t eps))))
-    ))
+        (recur v (- t eps))))))
+    
 
 (defn -main []
   (println "Hello, World!"))
